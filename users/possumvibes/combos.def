@@ -2,8 +2,8 @@
 
 /*---- TOP ROW HORIZONTAL----*/
 COMB(l_crx_up,          KC_ESC,     KC_W, KC_R)
-COMB(l_hrz_up_rng_mid,  KC_Z,       KC_W, KC_E) 
-COMB(l_hrz_up_mid_ind,  KY_QU,      KC_E, KC_R) 
+COMB(l_hrz_up_rng_mid,  KC_V,       KC_W, KC_E) 
+COMB(l_hrz_up_mid_ind,  KC_Q,       KC_E, KC_R) 
 COMB(l_ful_up,          PRVDESK,    KC_W, KC_E, KC_R)
 COMB(l_hrz_up_ind_lat,  KC_TILD,    KC_R, KC_T)
 
@@ -24,12 +24,12 @@ COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
 COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 
 /*---- BOTTOM ROW HORIZONTAL----*/
-COMB(l_hrz_dn_rng_mid,  KC_EQL,     KC_X, KC_C)
-COMB(l_hrz_dn_mid_ind,  KC_ASTR,    KC_C, KC_V)
+COMB(l_hrz_dn_rng_mid,  KC_X,       KC_X, KC_C)
+COMB(l_hrz_dn_mid_ind,  KC_Z,       KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
-// COMB(l_ful_dn,          PRVDESK,    KC_X, KC_C, KC_V)
+COMB(l_ful_dn,          KC_EQL,     KC_X, KC_C, KC_V)
 
-COMB(r_ful_dn,          KC_NO,      KC_M, KC_COMM, KC_DOT) // temp: no-op for former capsword
+COMB(r_ful_dn,          KC_ASTR,    KC_M, KC_COMM, KC_DOT)
 COMB(r_hrz_dn_mid_ind,  KC_MINS,    KC_M, KC_COMM)
 COMB(r_crx_dn,          KC_UNDS,    KC_M, KC_DOT)
 COMB(r_hrz_dn_rng_mid,  KC_BSPC,    KC_COMM, KC_DOT)
@@ -44,7 +44,7 @@ COMB(r_vert_up_ind,     KC_DLR,     KC_J, KC_U)
 COMB(r_vert_up_ring,    KC_AMPR,    KC_L, KC_O)
 
 /* --- HOME-BOTTOM VERTICALS --- */
-COMB(l_vert_hm_ring,    KC_GRV,    KC_S, KC_X)
+COMB(l_vert_hm_ring,    KC_GRV,     KC_S, KC_X)
 COMB(click_l,           LCLICK,     KC_D, KC_C)
 COMB(click_r,           RCLICK,     KC_F, KC_V)
 COMB(l_vert_hm_lat,     C(KC_W),    KC_G, KC_B) 
@@ -79,13 +79,8 @@ COMB(caps_lock,         KC_CAPS,    KC_R, KC_U)
 COMB(panic_time,        PANIC,      KC_D, KC_K)
 
 /*---- THUMBS ----*/
-#ifdef VERTICAL_THUMB_COMBO
-COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_B)
-COMB(rthumbs,           MCRMODE,    KC_SPC, KC_N)
-#else
 COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_TAB)
 COMB(rthumbs,           MCRMODE,    KC_SPC, KC_BSPC)
-#endif
 
 /*---- DIAGONAL THUMBS ----*/
 COMB(lt_out_ring,       SYMMODE,    KC_TAB, KC_S)

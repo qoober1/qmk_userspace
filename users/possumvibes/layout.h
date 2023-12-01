@@ -16,20 +16,18 @@
     KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
-// fun fact: i literally do not remember qwerty anymore
-#define LAYER_QWERTY \
+#define LAYER_APTv5 \
     KC_W,    KC_C,    KC_G,    KC_D,    KC_QUOT, KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    KC_V,    KC_B,    KC_P,    KC_F,    KC_Q,    XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+    XXXXXXX, KC_B,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
-/*
+// fun fact: i literally do not remember qwerty anymore
 #define LAYER_QWERTY \
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    \
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT, \
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
-*/
 
 // all the cool kids reference combos from an alpha layout they don't remember anymore
 #define LAYER_COMBOREF \
@@ -61,9 +59,9 @@
 
 // Sym layer: There are four symbols.
 #define LAYER_SYM \
-    _______, _______, OS_LGUI, _______, _______, MD_CODE, KC_EQL,  KC_PIPE, ANGLEBR, _______, \
+    _______, _______, OS_LGUI, _______, _______, MD_CODE, KC_EQL,  XXXXXXX, ANGLEBR, _______, \
     _______, OS_LALT, OS_LCTL, OS_LSFT, _______, LMBD_FN, KC_PLUS, KC_PIPE, MD_LINK, _______, \
-    _______, _______, OS_LALT, _______, _______, XXXXXXX, KC_PIPE, RPR_SCL, GET_SET, XXXXXXX, \
+    _______, _______, OS_LALT, _______, _______, XXXXXXX, XXXXXXX, RPR_SCL, GET_SET, XXXXXXX, \
                                _______, _______, OSR_SFT, _______
 
 // Nav layer: We Got Mods
