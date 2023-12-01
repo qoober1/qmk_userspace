@@ -45,6 +45,7 @@ enum custom_keycodes {
 
 // oneshot layers
 #define NUM_OSL     OSL(_NUM)
+#define SYS_OSL     OSL(_SYSTEM)
 
 // mouse button aliases for ease of use
 #define LCLICK      KC_BTN1
