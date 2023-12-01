@@ -80,10 +80,10 @@ COMB(panic_time,        PANIC,      KC_D, KC_K)
 
 /*---- THUMBS ----*/
 #ifdef VERTICAL_THUMB_COMBO
-COMB(lthumbs,           SYMMODE,    KC_ENT, KC_B)
+COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_B)
 COMB(rthumbs,           MCRMODE,    KC_SPC, KC_N)
 #else
-COMB(lthumbs,           SYMMODE,    KC_ENT, KC_TAB)
+COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_TAB)
 COMB(rthumbs,           MCRMODE,    KC_SPC, KC_BSPC)
 #endif
 
