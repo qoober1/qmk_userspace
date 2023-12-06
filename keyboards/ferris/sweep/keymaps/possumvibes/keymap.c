@@ -1,11 +1,11 @@
 #include "possumvibes.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWERTY] = LAYOUT_34key_w(HRM(LAYER_APTv3))
+    [_APT] = LAYOUT_34key_w(HRM(LAYER_APTv5))
+
+    ,[_QWERTY] = LAYOUT_34key_w(HRM(LAYER_APTv3))
 
     ,[_COMBOREF] = LAYOUT_34key_w(LAYER_COMBOREF)
-
-    ,[_APT] = LAYOUT_34key_w(HRM(LAYER_APTv5))
 
     ,[_FUNC] = LAYOUT_34key_w(LAYER_FUNC)
 
