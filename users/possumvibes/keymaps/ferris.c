@@ -1,1 +1,1 @@
-/home/afinegold/sources/qmk_userspace/keyboards/ferris/sweep/keymaps/possumvibes/keymap.c
+/home/possum/repos/qmk_userspace/keyboards/ferris/sweep/keymaps/possumvibes/keymap.c
