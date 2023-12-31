@@ -3,7 +3,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_APT] = LAYOUT_34key_w(HRM(LAYER_APTv5))
 
-    ,[_QWERTY] = LAYOUT_34key_w(HRM(LAYER_APTv3))
+    ,[_QWERTY] = LAYOUT_34key_w(HRM(LAYER_APTMAKNT))
 
     ,[_COMBOREF] = LAYOUT_34key_w(LAYER_COMBOREF)
 
