@@ -44,7 +44,7 @@ uint16_t get_combo_term(uint16_t index, combo_t *combo){
         case panic_time:
         case caps_word:
         case caps_lock:
-            return COMBO_TERM - 19; // 17 ms
+            return COMBO_TERM - 17; // 15 ms
 
         // thumbs
         case lthumbs:

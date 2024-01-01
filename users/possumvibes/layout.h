@@ -9,23 +9,26 @@
 #define THM_RH0     KC_SPC
 #define THM_RH1     KC_SPC
 
-// APTv3. Daily driver. 
+// Legacy daily driver
 #define LAYER_APTv3 \
     KC_W,    KC_G,    KC_D,    KC_F,    KC_B,    KC_Q,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
     KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
+// my first 30 key layout, intended for v on combo. Turns out I don't care for that,
+// so V is back on pinky for the moment so it's available when using this layout.
 #define LAYER_APTv5 \
     KC_W,    KC_C,    KC_G,    KC_D,    KC_QUOT, KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    XXXXXXX, KC_B,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+    KC_V,    KC_B,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
+// Testing Daily driver: 30 key: q, z, and ' on combo
 #define LAYER_APTMAKNT \
-    KC_W,    KC_C,    KC_G,    KC_D,    KC_B,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
+    KC_W,    KC_C,    KC_G,    KC_D,    KC_V,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    XXXXXXX, KC_V,    KC_F,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+    XXXXXXX, KC_B,    KC_F,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
