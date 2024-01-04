@@ -31,6 +31,13 @@
     XXXXXXX, KC_B,    KC_F,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
+// Testing Daily driver: 30 key: q, z, and ' on combo
+#define LAYER_APTv30KEY \
+    KC_W,    KC_G,    KC_D,    KC_F,    KC_V,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
+    KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
+    XXXXXXX, KC_C,    KC_B,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+                               THM_LH0, THM_LH1, THM_RH1, THM_RH0
+
 // fun fact: i literally do not remember qwerty anymore
 #define LAYER_QWERTY \
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    \
