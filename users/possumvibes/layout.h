@@ -16,26 +16,17 @@
     KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    XXXXXXX, KC_QUOT, KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
-// my first 30 key layout, intended for v on combo. Turns out I don't care for that,
-// so V is back on pinky for the moment so it's available when using this layout.
-#define LAYER_APTv5 \
-    KC_W,    KC_C,    KC_G,    KC_D,    KC_QUOT, KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
-    KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    KC_V,    KC_B,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
-                               THM_LH0, THM_LH1, THM_RH1, THM_RH0
-
 // Testing Daily driver: 30 key: q, z, and ' on combo
 #define LAYER_APTMAKNT \
     KC_W,    KC_C,    KC_G,    KC_D,    KC_V,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    XXXXXXX, KC_B,    KC_F,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+    XXXXXXX, KC_F,    KC_P,    KC_B,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
-// Testing Daily driver: 30 key: q, z, and ' on combo
-#define LAYER_APTv30KEY \
-    KC_W,    KC_G,    KC_D,    KC_F,    KC_V,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
+#define LAYER_APTMAKNT2 \
+    KC_W,    KC_C,    KC_G,    KC_D,    KC_B,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
     KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    XXXXXXX, KC_C,    KC_B,    KC_P,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
+    XXXXXXX, KC_V,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
 // fun fact: i literally do not remember qwerty anymore
@@ -54,16 +45,16 @@
 
 // Functions and Window management. Funcs are organized by number except for the debuggin' ones
 #define LAYER_FUNC \
-    XXXXXXX, G(KC_5), G(KC_6), G(KC_7), G(KC_8), KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   \
-    G(KC_9), G(KC_1), G(KC_2), G(KC_3), G(KC_4), KC_1,    F11_TH,  KC_F10,  F6_TH,   KC_F12,  \
-    OS_LGUI, OS_LALT, OS_LCTL, OS_LSFT, G(KC_7), XXXXXXX, KC_F2,   KC_F3,   KC_F4,   XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, G(KC_5), KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   \
+    OS_LGUI, G(KC_1), G(KC_2), G(KC_3), G(KC_4), KC_1,    F11_TH,  KC_F10,  F6_TH,   KC_F12,  \
+    XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX, XXXXXXX, KC_F2,   KC_F3,   KC_F4,   XXXXXXX, \
                                _______, _______, _______, _______
 
 // Numpad left, mods, some punc, and jkgG right.
 #define LAYER_NUM \
-    KC_W,    KC_7,    KC_8,    KC_9,    KC_PERC, KC_G,    KC_PLUS, OS_LGUI, _______, XXXXXXX, \
-    KC_V,    KC_4,    KC_5,    KC_6,    KC_DLR,  S(KC_G), KC_J,    KC_K,    KC_L,    XXXXXXX, \
-    KC_X,    KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
+    KC_W,    KC_7,    KC_8,    KC_9,    KC_PERC, _______, KC_PLUS, OS_LGUI, _______, XXXXXXX, \
+    KC_V,    KC_4,    KC_5,    KC_6,    KC_DLR,  S(KC_G), KC_J,    KC_K,    KC_G,    XXXXXXX, \
+    XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
                                _______, KC_0,    OSR_SFT, _______
 
 // Macro layer: it's got macros
@@ -75,16 +66,16 @@
 
 // Sym layer: There are four symbols.
 #define LAYER_SYM \
-    _______, _______, OS_LGUI, _______, _______, MD_CODE, KC_EQL,  XXXXXXX, ANGLEBR, _______, \
-    _______, OS_LALT, OS_LCTL, OS_LSFT, _______, LMBD_FN, KC_PLUS, KC_PIPE, MD_LINK, _______, \
-    _______, _______, OS_LALT, _______, _______, XXXXXXX, XXXXXXX, RPR_SCL, GET_SET, XXXXXXX, \
+    _______, _______, _______, _______, _______, MD_CODE, KC_EQL,  XXXXXXX, ANGLEBR, _______, \
+    OS_LGUI, _______, _______, _______, _______, LMBD_FN, KC_PLUS, KC_PIPE, MD_LINK, _______, \
+    XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, GET_SET, XXXXXXX, \
                                _______, _______, OSR_SFT, _______
 
 // Nav layer: We Got Mods
 #define LAYER_NAV \
-    XXXXXXX, OS_LGLC, OS_LGUI, XXXXXXX, XXXXXXX, UND_RED, KC_HOME, KC_UP,   KC_END,  XXXXXXX,  \
-    TS_LCTL, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX, F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,  \
-    ML_LGUI, ML_LALT, ML_LCTL, ML_LSFT, CLEAR,   XXXXXXX, S_BACK,  F12_TH,  S_FWD,   XXXXXXX,  \
+    XXXXXXX, S_BACK,  OS_LGUI, S_FWD,   XXXXXXX, UND_RED, KC_HOME, KC_UP,   KC_END,  CLEAR,  \
+    OS_LGLC, OS_LALT, OS_LCTL, OS_LSFT, TS_LCTL, F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, ML_LGUI,  \
+    XXXXXXX, XXXXXXX, F12_TH,  XXXXXXX, XXXXXXX, XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, XXXXXXX,  \
                                _______, _______, _______, _______
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.
