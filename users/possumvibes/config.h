@@ -9,7 +9,7 @@
 
 // Combos!
 #define COMBO_TERM 36                   // Gotta combo fast.
-#define COMBO_ONLY_FROM_LAYER 1         // compare only with the COMBOREF layer.
+#define COMBO_ONLY_FROM_LAYER 2         // compare only with the COMBOREF layer.
 #define COMBO_TERM_PER_COMBO            // Adjust combo term for ease of combo.
 #define COMBO_STRICT_TIMER              // all keys must be hit within the term from the first keypress.
 

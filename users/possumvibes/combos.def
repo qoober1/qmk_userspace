@@ -24,7 +24,7 @@ COMB(r_hrz_hm_mid_ind,  KC_COLN,    KC_J, KC_K)
 COMB(r_crx_hm,          KC_SCLN,    KC_J, KC_L)
 
 /*---- BOTTOM ROW HORIZONTAL----*/
-COMB(l_hrz_dn_rng_mid,  KC_ASTR,    KC_X, KC_C)
+COMB(l_hrz_dn_rng_mid,  KILLWRD,    KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_Z,       KC_C, KC_V)
 COMB(enter,             KC_ENT,     KC_X, KC_V)
 COMB(l_ful_dn,          KC_EQL,     KC_X, KC_C, KC_V)
@@ -70,7 +70,7 @@ COMB(wheel_dn,          KC_WH_D,    KC_F, KC_B)
 COMB(page_dn,           KC_PGDN,    KC_J, KC_N)
 COMB(r_diag_hm_mid,     KC_RPRN,    KC_K, KC_M)
 COMB(dmenu,             DMENU,      KC_L, KC_M)
-COMB(r_diag_hm_pnk,     KC_DEL,     KC_DOT, KC_SCLN)
+// COMB(r_diag_hm_pnk,     KC_DEL,     KC_DOT, KC_SCLN)
 
 /*---- CROSS-HANDS ----*/
 COMB(caps_word,         CW_TOGG,    KC_E, KC_I)

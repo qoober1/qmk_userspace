@@ -19,7 +19,8 @@ bool pre_process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 // OS-specific logic config
-static bool is_windows = false;
+static bool is_linux = true;
+static uint8_t df_layer = 0;
 
 // Smart Layer config
 bool _num_mode_active = false;
@@ -40,7 +41,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // Process the functions
     process_mod_lock(keycode, record);
-    process_nshot_state(keycode, record);
+    process_nshot_state(keycode, record, !is_linux);
 
     // Process smart layers
     if (_num_mode_active) {
@@ -194,65 +195,122 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (get_oneshot_layer() != 0) {
                 clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
             }
-            layer_move(0);
+            layer_move(df_layer);
 
             // and caps lock/word
             clear_caps();
             return false;
         }
 
-        case UND_RED: return override_shift(is_shifted, C(KC_Z), C(KC_Y), record);
-
-        case IS_WIN: {
+        case ISLINUX: {
             if(record->event.pressed){
-                is_windows = !is_windows;
+                is_linux = !is_linux;
+
+                df_layer = is_linux ? _APT : _DF_MAC;
+                layer_move(df_layer);
+                default_layer_set(df_layer);
             }
             return false;
         }
+        case MACMODS:
+            if (is_linux) return false;
 
-        case LOCKSCR: 
-            if(record ->event.pressed) {
-                uint16_t code = is_windows ? G(KC_L): C(A(KC_L));
-                tap_code16(code);
+            if (record->event.pressed){
+                df_layer = _DF_MAC; 
+                layer_move(df_layer);
+                default_layer_set(df_layer);
+            }
+            return false;
+        case LINMODS:
+            if (is_linux) return false;
+
+            if (record->event.pressed){
+                df_layer = _APT; 
+                layer_move(df_layer);
+                default_layer_set(df_layer);
             }
             return false;
 
-        case ALT_F4:
+        case APT:
             if(record->event.pressed){
-                uint16_t code = is_windows ? A(KC_F4) : G(KC_W);
-                tap_code16(code);
+                df_layer = is_linux ? _APT: _DF_MAC;
+                layer_move(df_layer);
+                default_layer_set(df_layer);
             }
             return false;
-        case DMENU:
+        case QWERTY:
             if(record->event.pressed){
-                uint16_t code = is_windows ? KC_LGUI : G(KC_SPC);
-                tap_code16(code);
+                df_layer = is_linux ? _QWERTY: _ALT_MAC;
+                layer_move(df_layer);
+                default_layer_set(df_layer);
             }
             return false;
+
+        case GOTO_1: return send_alternate_key(G(KC_1), C(KC_1), !is_linux, record);
+        case GOTO_2: return send_alternate_key(G(KC_2), C(KC_2), !is_linux, record);
+        case GOTO_3: return send_alternate_key(G(KC_3), C(KC_3), !is_linux, record);
+        case GOTO_4: return send_alternate_key(G(KC_4), C(KC_4), !is_linux, record);
+        case GOTO_5: return send_alternate_key(G(KC_5), C(KC_5), !is_linux, record);
+
+        case LOCKSCR:  return send_alternate_key(C(A(KC_L)), G(C(KC_Q)), !is_linux, record);
+        case UND_RED: 
+            if (is_linux){
+                return override_shift(is_shifted, C(KC_Z), C(KC_Y), record);
+            }
+            return override_shift(is_shifted, G(KC_Z), G(KC_Y), record);
+
+
         case DLAYOUT:
-            if (is_windows){
-                if (record->event.pressed){
-                    tap_code16(G(S(KC_LBRC)));
+            if (is_linux){
+                if(record->event.pressed){
+                    tap_code16(G(A(KC_SPC)));
                 }
-                return false;
+                return true;
             }
-            if(record->event.pressed){
-                tap_code16(G(A(KC_SPC)));
-            }
-            return true;
-        case PRVDESK:     
-            if(record->event.pressed){
-                uint16_t code = is_windows ? C(G(KC_LEFT)) : G(KC_LEFT);
-                tap_code16(code);
-            }
-            return false;
-        case NXTDESK:     
-            if(record->event.pressed){
-                uint16_t code = is_windows ? C(G(KC_RGHT)) : G(KC_RGHT);
-                tap_code16(code);
+
+            if (record->event.pressed){
+                tap_code16(G(S(KC_LBRC)));
             }
             return false;
 
+        case PRVDESK:  return send_alternate_key(G(KC_LEFT), C(KC_LEFT), !is_linux, record);
+        case NXTDESK:  return send_alternate_key(G(KC_RGHT), C(KC_RGHT), !is_linux, record);
+
+        case S_CUT:    return send_alternate_key(S(KC_DEL),  G(KC_X),    !is_linux, record);
+        case S_COPY:   return send_alternate_key(C(KC_INS),  G(KC_C),    !is_linux, record);
+        case S_PASTE:  return send_alternate_key(S(KC_INS),  G(KC_V),    !is_linux, record);
+        case S_BACK:   return send_alternate_key(A(KC_LEFT), G(KC_LBRC), !is_linux, record);
+        case S_FWD:    return send_alternate_key(A(KC_RGHT), G(KC_RBRC), !is_linux, record);
+        case S_CLOSE:  return send_alternate_key(C(KC_W),    G(KC_W),    !is_linux, record);
+        case S_SAVE:   return send_alternate_key(C(KC_S),    G(KC_S),    !is_linux, record);
+
+        case KILLWRD:
+            if (get_mods() & MOD_MASK_ALT){
+                return send_alternate_key(C(KC_DEL), A(KC_DEL), !is_linux, record);
+            }
+            return send_alternate_key(C(KC_BSPC), A(KC_BSPC), !is_linux, record);
+
+        case KC_HOME:
+            // Linux is normal. Mac is horrible.
+            if(is_linux || (get_mods() & MOD_MASK_CTRL)){
+                return true;
+            }
+
+            if (record->event.pressed){
+                  tap_code16(C(KC_A));
+            }
+            return false;
+        case KC_END:
+            // Linux is normal. Mac is horrible.
+            if(is_linux || (get_mods() & MOD_MASK_CTRL)){
+                return true;
+            }
+
+            if (record->event.pressed){
+                  tap_code16(C(KC_E));
+            }
+            return false;
+        
         case MD_LINK: return send_string_markdown_link(record);
 
         case MD_CODE:
@@ -286,21 +344,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
         }
-        case COMMENT: {
-            if(record->event.pressed){
-                SEND_STRING(SS_LCTL("kc"));
-                tap_code16(C(KC_S));
-            }
-            return false;
-        }
-        case UNCOMNT: {
-            if(record->event.pressed){
-                SEND_STRING(SS_LCTL("ku"));
-                tap_code16(C(KC_S));
-            }
-            return false;
-        }
-
         case KY_V1: return send_string_version(is_shifted, KC_1, record);
         case KY_V2: return send_string_version(is_shifted, KC_2, record);
         case KY_V3: return send_string_version(is_shifted, KC_3, record);

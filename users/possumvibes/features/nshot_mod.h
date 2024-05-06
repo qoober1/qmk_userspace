@@ -13,11 +13,11 @@ typedef enum {
 typedef struct {
     uint16_t      trigger;          // Keycode to activate the n-shot mod
     uint8_t       modbit;           // Modbit allows for mod combos.
+    uint8_t       alternate_modbit; // Alternate modbit for Gui-Ctl swapping.
     uint8_t       max_count;        // one-shot, two-shot, ..., n-shot.
     bool          active_on_rolls;  // Behavior for A down, Mod down, A up = (active_on_rolls == true ? Mod-A : a)
     oneshot_state state;            // Direct from users/callum
     uint8_t       count;            // N-shot count state
-    uint16_t      timer;            // N-shot timer for tracking use as held mod
     bool          had_keydown;      // keydown state for (active_on_rolls == false)
 } nshot_state_t;
 
@@ -32,7 +32,7 @@ extern uint8_t             NUM_NSHOT_STATES;
 // Based on the implementation in /users/callum, available in qmk master.
 
 // Oneshot implementation. Call this in process_records.
-void process_nshot_state(uint16_t keycode, keyrecord_t *record);
+void process_nshot_state(uint16_t keycode, keyrecord_t *record, bool use_alternate);
 
 // Keys that should cancel the n-shot mod if tapped
 bool is_nshot_cancel_key(uint16_t keycode);

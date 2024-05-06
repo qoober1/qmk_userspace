@@ -35,6 +35,17 @@ bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record) {
     return true;
 }
 
+bool send_alternate_key(
+  uint16_t default_keycode,
+  uint16_t alt_keycode,
+  bool use_alternate,
+  keyrecord_t *record) {
+  if (record->event.pressed){
+    tap_code16(use_alternate ? alt_keycode : default_keycode);
+  }
+  return false;
+}
+
 bool send_autopair(
   uint16_t keycode,
   uint16_t pair_keycode,

@@ -13,6 +13,11 @@ bool override_shift(bool is_shifted,
 // tap-hold equivalent to override_shift
 bool override_th_hold(uint16_t hold_keycode, keyrecord_t *record);
 
+bool send_alternate_key(uint16_t default_keycode,
+                        uint16_t alt_keycode,
+                        bool use_alternate,
+                        keyrecord_t *record);
+
 // Sends an auto-closed keycode pair.
 bool send_autopair(
   uint16_t left_keycode,

@@ -1,19 +1,26 @@
 #pragma once
 #include "quantum/keycodes.h"
 
-enum layers { _APT = 0, _COMBOREF, _QWERTY, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM };
+enum layers { _APT = 0, _DF_MAC, _COMBOREF, _QWERTY, _ALT_MAC, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM };
 
 enum custom_keycodes {
     // OS-specific utilities
-    IS_WIN =  QK_USER, 
-    LOCKSCR, ALT_F4, DMENU, DLAYOUT,
+    ISLINUX =  QK_USER, 
+    MACMODS, LINMODS,
+    LOCKSCR, DLAYOUT, S_CUT, S_COPY, S_PASTE,  S_CLOSE, S_SAVE, KILLWRD,
+
+    // Alpha layers
+    APT, QWERTY, 
 
     // Layer modes and how to escape them
     NUMMODE, FUNMODE, NAVMODE, SYMMODE, MCRMODE, PANIC,
 
-    // "Paired" macros: Undo/Redo, Comment/Uncomment, QMK Compile/Flash
-    UND_RED, QMKCOMP, QMKFLSH, COMMENT, UNCOMNT,
-    PRVDESK, NXTDESK,
+    // "Paired" macros: Undo/Redo, QMK Compile/Flash
+    UND_RED, QMKCOMP, QMKFLSH,
+    PRVDESK, NXTDESK, S_BACK, S_FWD,
+
+    // Desktop nav
+    GOTO_1, GOTO_2, GOTO_3, GOTO_4, GOTO_5, 
 
     // Custom markup and programming syntax
     ANGLEBR, BRCKETS, // self-closing brackets: <|>, [|]  {|}
@@ -52,18 +59,11 @@ enum custom_keycodes {
 #define RCLICK      KC_BTN2
 #define MCLICK      KC_BTN3
 
-// Default Layer States
-#define QWERTY      DF(_QWERTY)
-#define APT         DF(_APT)
-
 // Shortcuts
-#define S_CUT       S(KC_DEL)
-#define S_COPY      C(KC_INS)
-#define S_PASTE     S(KC_INS)
-#define S_SAVE      C(KC_S)
-#define S_BACK      A(KC_LEFT)
-#define S_FWD       A(KC_RGHT)
+#define S_KILL      G(KC_Q)
+
 #define TMUXPRE     C(KC_SPC)
+#define DMENU       G(KC_SPC)
 
 // Macros
 #define TH(k)       LT(0,k)
