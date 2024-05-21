@@ -18,6 +18,7 @@ typedef struct {
     bool          active_on_rolls;  // Behavior for A down, Mod down, A up = (active_on_rolls == true ? Mod-A : a)
     oneshot_state state;            // Direct from users/callum
     uint8_t       count;            // N-shot count state
+    uint16_t      timer;            // N-shot timer for tracking use as held mod
     bool          had_keydown;      // keydown state for (active_on_rolls == false)
 } nshot_state_t;
 
