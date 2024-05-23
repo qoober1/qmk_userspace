@@ -42,7 +42,7 @@ enum custom_keycodes {
     ML_LCTL, ML_LSFT, ML_LALT, ML_LGUI, CLEAR, 
 
     // N-Shot Mods: "normal" callum-style n-shot mods (now featuring MULTI MODS!!!)
-    OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, OS_LGLC, TS_LCTL,
+    OS_LSFT, OS_LCTL, OS_LALT, OS_RALT, OS_LGUI, OS_LGLC, TS_LCTL,
     OSR_SFT, // and also n-shot Thumbshift (see n-shot mods for rolling differences)
 
     NEW_SAFE_RANGE  // Use for keymap-specific codes
