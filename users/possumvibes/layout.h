@@ -60,7 +60,7 @@
 // Macro layer: it's got macros
 #define LAYER_MACRO \
     _______, KY_V1,   KY_V2,   KY_V3,   _______, XXXXXXX, KC_MPLY, KC_VOLU, KC_MSTP, XXXXXXX, \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT, XXXXXXX, \
+    XXXXXXX, OS_RALT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, OSR_SFT, _______
 
@@ -75,7 +75,7 @@
 #define LAYER_NAV \
     XXXXXXX, S_BACK,  OS_LGUI, S_FWD,   XXXXXXX, UND_RED, KC_HOME, KC_UP,   KC_END,  CLEAR,  \
     OS_LGLC, OS_LALT, OS_LCTL, OS_LSFT, TS_LCTL, F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, ML_LGUI,  \
-    XXXXXXX, KC_MEH,  F12_TH,  KC_HYPR, XXXXXXX, XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, XXXXXXX,  \
+    XXXXXXX, OS_RALT, F12_TH,  KC_HYPR, XXXXXXX, XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, XXXXXXX,  \
                                _______, _______, _______, _______
 
 // SYS layer: helpful macros, system settings, and (for now) some window manager shortcuts.

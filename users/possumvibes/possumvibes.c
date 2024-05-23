@@ -447,6 +447,7 @@ nshot_state_t  nshot_states[] = {
     {OS_LSFT,  MOD_BIT(KC_LSFT),  MOD_BIT(KC_LSFT),   1,   true,       os_up_unqueued,  0,   0,     false},    // S-a
     {OS_LCTL,  MOD_BIT(KC_LCTL),  MOD_BIT(KC_LGUI),   1,   true,       os_up_unqueued,  0,   0,     false},    // C-a
     {OS_LALT,  MOD_BIT(KC_LALT),  MOD_BIT(KC_LALT),   1,   true,       os_up_unqueued,  0,   0,     false},    // A-a
+    {OS_RALT,  MOD_BIT(KC_RALT),  MOD_BIT(KC_RALT),   1,   true,       os_up_unqueued,  0,   0,     false},    // AltGr-a
     {OS_LGUI,  MOD_BIT(KC_LGUI),  MOD_BIT(KC_LCTL),   1,   true,       os_up_unqueued,  0,   0,     false},    // G-a
     {OS_LGLC,  MODBIT_GUICTL,     MODBIT_GUICTL,      1,   true,       os_up_unqueued,  0,   0,     false},    // G-C-a
     {TS_LCTL,  MOD_BIT(KC_LCTL),  MOD_BIT(KC_LCTL),   2,   true,       os_up_unqueued,  0,   0,     false},    // C-a
