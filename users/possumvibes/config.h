@@ -18,7 +18,7 @@
 #define EE_HANDS
 
 // debounce getting  funky
-#define DEBOUNCE 6
+#define DEBOUNCE 8
 
 // SPACE SAVERS FOR ALL BOARDS.
 #undef LOCKING_SUPPORT_ENABLE
