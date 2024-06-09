@@ -92,7 +92,7 @@
 #define URM_L(k1) LGUI_T(k1)
 #define URM_R(k1) RGUI_T(k1)
 #define HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LCTL_T(k2),LSFT_T(k3)
-#define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),RALT_T(k2),k3
+#define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),LALT_T(k2),k3
 
 // Macros to do the same but for mac
 #define MAC_URM_L(k1) LCTL_T(k1)
