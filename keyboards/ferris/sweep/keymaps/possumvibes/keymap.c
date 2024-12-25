@@ -17,9 +17,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     ,[_SYM] = LAYOUT_34key_w(LAYER_SYM)
 
+    ,[_NETHACK] = LAYOUT_34key_w(HRM(LAYER_NETHACK))
+
     ,[_NAV] = LAYOUT_34key_w(LAYER_NAV)
 
     ,[_SYSTEM] = LAYOUT_34key_w(LAYER_SYSTEM)
+
 };
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {

@@ -23,12 +23,6 @@
     XXXXXXX, KC_F,    KC_P,    KC_B,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 
-#define LAYER_APTMAKNT2 \
-    KC_W,    KC_C,    KC_G,    KC_D,    KC_B,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
-    KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    \
-    XXXXXXX, KC_V,    KC_P,    KC_F,    XXXXXXX, XXXXXXX, KC_M,    KC_COMM, KC_DOT,  XXXXXXX, \
-                               THM_LH0, THM_LH1, THM_RH1, THM_RH0
-
 // fun fact: i literally do not remember qwerty anymore
 #define LAYER_QWERTY \
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    \
@@ -84,6 +78,11 @@
     QWERTY,  APT,     _______, _______, _______, ISLINUX, QMKCOMP, S_CLOSE, VI_ZQ,   _______, \
     _______, _______, _______, _______, _______, XXXXXXX, QMKFLSH, S_SAVE,  VI_ZZ,   _______, \
                                _______, _______, _______, _______
+#define LAYER_NETHACK \
+    KC_O,    KC_W,    KC_E,    KC_R,    KC_T,    KC_I,    KC_Y,    KC_K,   KC_U,    KC_P, \
+    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_M,    KC_H,    KC_J,   KC_L,    KC_COMM, \
+    XXXXXXX, KC_X,    KC_C,    KC_V,    XXXXXXX, XXXXXXX, KC_B,    KC_DOT, KC_N,    XXXXXXX, \
+                               NAVMODE, OSR_SFT, KC_SPC, KC_SPC
 
 // LAYOUT wrappers for default 34-key layout mapping
 #define LAYOUT_34key_w(...) LAYOUT_split_3x5_2(__VA_ARGS__)

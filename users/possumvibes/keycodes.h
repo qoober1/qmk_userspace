@@ -1,7 +1,20 @@
 #pragma once
 #include "quantum/keycodes.h"
 
-enum layers { _APT = 0, _DF_MAC, _COMBOREF, _QWERTY, _ALT_MAC, _FUNC, _NUM, _MACRO, _SYM, _NAV, _SYSTEM };
+enum layers { 
+  _APT = 0,
+  _DF_MAC,
+  _COMBOREF,
+  _QWERTY,
+  _ALT_MAC,
+  _FUNC,
+  _NUM,
+  _MACRO,
+  _SYM,
+  _NETHACK,
+  _NAV,
+  _SYSTEM 
+};
 
 enum custom_keycodes {
     // OS-specific utilities
@@ -72,4 +85,7 @@ enum custom_keycodes {
 #define F6_TH       TH(KC_F6)
 #define F11_TH      TH(KC_F11)
 #define F12_TH      TH(KC_F12)
+
+// Nethack!
+#define NETHACK     TO(_NETHACK)
 
