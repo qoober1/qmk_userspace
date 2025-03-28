@@ -11,7 +11,6 @@ enum layers {
   _NUM,
   _MACRO,
   _SYM,
-  _NETHACK,
   _NAV,
   _SYSTEM 
 };
@@ -85,7 +84,4 @@ enum custom_keycodes {
 #define F6_TH       TH(KC_F6)
 #define F11_TH      TH(KC_F11)
 #define F12_TH      TH(KC_F12)
-
-// Nethack!
-#define NETHACK     TO(_NETHACK)
 

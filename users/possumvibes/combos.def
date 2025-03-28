@@ -78,8 +78,6 @@ COMB(caps_lock,         KC_CAPS,    KC_R, KC_U)
  
 COMB(panic_time,        PANIC,      KC_D, KC_K)
 
-COMB(nethack,           NETHACK,    KC_W, KC_R, KC_U, KC_O)
-
 /*---- THUMBS ----*/
 COMB(lthumbs,           SYS_OSL,    KC_ENT, KC_TAB)
 COMB(rthumbs,           MCRMODE,    KC_SPC, KC_BSPC)

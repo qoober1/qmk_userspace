@@ -47,7 +47,7 @@
 // Numpad left, mods, some punc, and jkgG right.
 #define LAYER_NUM \
     KC_W,    KC_7,    KC_8,    KC_9,    KC_PERC, _______, KC_PLUS, OS_LGUI, _______, XXXXXXX, \
-    KC_V,    KC_4,    KC_5,    KC_6,    KC_DLR,  S(KC_G), KC_J,    KC_K,    KC_G,    XXXXXXX, \
+    KC_V,    KC_4,    KC_5,    KC_6,    KC_N,    S(KC_G), KC_J,    KC_K,    KC_G,    XXXXXXX, \
     XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
                                _______, KC_0,    OSR_SFT, _______
 
@@ -78,12 +78,6 @@
     QWERTY,  APT,     _______, _______, _______, ISLINUX, QMKCOMP, S_CLOSE, VI_ZQ,   _______, \
     _______, _______, _______, _______, _______, XXXXXXX, QMKFLSH, S_SAVE,  VI_ZZ,   _______, \
                                _______, _______, _______, _______
-#define LAYER_NETHACK \
-    KC_O,    KC_W,    KC_E,    KC_R,    KC_T,    KC_I,    KC_Y,    KC_K,   KC_U,    KC_P, \
-    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_M,    KC_H,    KC_J,   KC_L,    KC_COMM, \
-    XXXXXXX, KC_X,    KC_C,    KC_V,    XXXXXXX, XXXXXXX, KC_B,    KC_DOT, KC_N,    XXXXXXX, \
-                               NAVMODE, OSR_SFT, KC_SPC, KC_SPC
-
 // LAYOUT wrappers for default 34-key layout mapping
 #define LAYOUT_34key_w(...) LAYOUT_split_3x5_2(__VA_ARGS__)
 
