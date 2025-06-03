@@ -41,7 +41,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // Process the functions
     process_mod_lock(keycode, record);
-    process_nshot_state(keycode, record, !is_linux);
+    // process_nshot_state(keycode, record, !is_linux);
 
     // Process smart layers
     if (_num_mode_active) {

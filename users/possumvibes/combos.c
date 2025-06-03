@@ -3,7 +3,7 @@
 #ifdef COMBO_TERM_PER_COMBO
 uint16_t get_combo_term(uint16_t index, combo_t *combo){
     switch(index) {
-        // faster combos over rolls
+     // faster combos over rolls
         case l_crx_up:
         case r_crx_up:
         case r_crx_hm:

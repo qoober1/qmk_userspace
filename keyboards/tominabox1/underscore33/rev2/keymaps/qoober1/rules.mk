@@ -1,0 +1,11 @@
+OLED_ENABLE 				= no
+RGBLIGHT_ENABLE 		    = no    # Enable keyboard RGB underglow
+KEY_OVERRIDE_ENABLE         = no
+CONSOLE_ENABLE              = yes
+LTO_ENABLE                  = yes
+COMMAND_ENABLE              = no
+MOUSEKEY_ENABLE             = no
+EXTRAKEY_ENABLE             = no
+SPACE_CADET_ENABLE          = no
+GRAVE_ESC_ENABLE            = no 
+MAGIC_ENABLE                = no

@@ -3,10 +3,11 @@
 
 enum layers { 
   _APT = 0,
-  _DF_MAC,
+  _ALPHA2,
   _COMBOREF,
-  _QWERTY,
-  _ALT_MAC,
+  // _DF_MAC,
+  // _QWERTY,
+  // _ALT_MAC,
   _FUNC,
   _NUM,
   _MACRO,
@@ -16,16 +17,20 @@ enum layers {
 };
 
 enum custom_keycodes {
+
+
     // OS-specific utilities
     ISLINUX =  QK_USER, 
     MACMODS, LINMODS,
     LOCKSCR, DLAYOUT, S_CUT, S_COPY, S_PASTE,  S_CLOSE, S_SAVE, KILLWRD,
 
+    MAGIK,
+
     // Alpha layers
     APT, QWERTY, 
 
     // Layer modes and how to escape them
-    NUMMODE, FUNMODE, NAVMODE, SYMMODE, MCRMODE, PANIC,
+    ALPHAMODE, NUMMODE, FUNMODE, NAVMODE, SYMMODE, MCRMODE, PANIC,
 
     // "Paired" macros: Undo/Redo, QMK Compile/Flash
     UND_RED, QMKCOMP, QMKFLSH,
@@ -39,7 +44,7 @@ enum custom_keycodes {
     MD_LINK, MD_CODE, // Markdown: [links|]() and ```codeblocks|  ```
     GET_SET,  // { get; set; }
     RPR_SCL,  // ); ();
-    LMBD_FN,  // () =>
+    // LMBD_FN,  // () =>
 
     // Quick "not typing all that" strings
     KY_QU, KY_V1, KY_V2, KY_V3,
@@ -48,19 +53,25 @@ enum custom_keycodes {
     VI_ZZ, VI_ZQ,   VI_YAW, VI_YIW,   VI_YA, VI_YI,   VI_AW, VI_IW,
 
     // Swapper keys: Windows, tabs, and generic Reverse
-    SW_WIN, SW_TAB, SW_REV,
+    // SW_WIN, SW_TAB, SW_REV,
 
     // Locking Mods and how to escape them
     ML_LCTL, ML_LSFT, ML_LALT, ML_LGUI, CLEAR, 
 
     // N-Shot Mods: "normal" callum-style n-shot mods (now featuring MULTI MODS!!!)
-    OS_LSFT, OS_LCTL, OS_LALT, OS_RALT, OS_LGUI, OS_LGLC, TS_LCTL,
+    OS_LSFT, OS_LCTL, OS_LALT, OS_RALT, OS_LGUI, OS_LGLC, OS_LMEH, TS_LCTL,
     OSR_SFT, // and also n-shot Thumbshift (see n-shot mods for rolling differences)
 
     NEW_SAFE_RANGE  // Use for keymap-specific codes
 };
 
 /* ---------- Aliases ---------- */
+
+// #define OSL_R       LT(_NAV, KC_R)
+#define LT_SPC      LT(_NAV, KC_SPC)
+#define LT_D        LT(_SYM, KC_D)
+#define LT_L        LT(_NUM, KC_L)
+// #define MAGIK       LT(_SYM, KC_0)
 
 // oneshot layers
 #define NUM_OSL     OSL(_NUM)

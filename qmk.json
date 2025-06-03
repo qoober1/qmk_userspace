@@ -1,7 +1,6 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["ferris/sweep", "possumvibes"],
-        ["cradio", "possumvibes"]
+        ["tominabox1/underscore33/rev2", "qoober1"],
     ]
 }

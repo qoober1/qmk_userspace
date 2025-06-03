@@ -3,19 +3,23 @@
 #include "keycodes.h"
 
 // Primary Thumb Keys
-#define THM_LH0     NAVMODE
-#define THM_LH1     OSR_SFT
+#define THM_LH0     NUMMODE
+#define THM_RH1     MAGIK
 
-#define THM_RH0     KC_SPC
-#define THM_RH1     KC_SPC
+#define THM_LH1     LT_SPC
+#define THM_RH0     KC_NO
 
 // Legacy daily driver
 #define LAYER_APTv3 \
-    KC_B   , KC_F   , KC_L   , KC_Q   , KC_J   , KC_NO  , KC_Z   , KC_U   , KC_O   , KC_Y   , \
-    KC_N   , KC_S   , KC_H   , KC_C   , KC_P   , KC_J   , KC_T   , KC_E   , KC_A   , KC_I   , \
-    KC_X   , KC_V   , KC_K   , KC_W   , KC_G   , KC_M   , KC_D   , KC_COMM, KC_DOT , XXXXXXX, \
+    KC_F   , KC_M   , KC_N   , LT_D   , KC_Y   , KC_J   , LT_L   , KC_U   , KC_O   , KC_DOT , \
+    KC_S   , KC_T   , KC_H   , KC_G   , KC_C   , KC_W   , KC_R   , KC_E   , KC_A   , KC_I   , \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
-
+#define LAYER_ALPHA2 \
+    _______, _______, KC_Q   , _______, _______, _______, _______, _______, _______, _______, \
+    KC_X   , KC_K   , KC_J   , KC_V   , KC_Z   , _______, _______, _______, _______, PANIC  , \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+                               XXXXXXX, _______, _______, XXXXXXX
 // Testing Daily driver: 30 key: q, z, and ' on combo
 #define LAYER_APTMAKNT \
     KC_W,    KC_C,    KC_G,    KC_D,    KC_V,    KC_X,    KC_L,    KC_U,    KC_O,    KC_Y,    \
@@ -47,8 +51,8 @@
 // Numpad left, mods, some punc, and jkgG right.
 #define LAYER_NUM \
     KC_W,    KC_7,    KC_8,    KC_9,    KC_PERC, _______, KC_PLUS, OS_LGUI, _______, XXXXXXX, \
-    KC_V,    KC_4,    KC_5,    KC_6,    KC_N,    S(KC_G), KC_J,    KC_K,    KC_G,    XXXXXXX, \
-    XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
+    KC_V,    KC_3,    KC_2,    KC_1,    KC_N,    S(KC_G), KC_J,    KC_K,    KC_G,    XXXXXXX, \
+    XXXXXXX, KC_6,    KC_5,    KC_4,    XXXXXXX, XXXXXXX, _______, _______, _______, XXXXXXX, \
                                _______, KC_0,    OSR_SFT, _______
 
 // Macro layer: it's got macros
@@ -60,15 +64,15 @@
 
 // Sym layer: There are four symbols.
 #define LAYER_SYM \
-    _______, _______, _______, _______, _______, MD_CODE, KC_EQL,  XXXXXXX, ANGLEBR, _______, \
-    OS_LGUI, _______, _______, _______, _______, LMBD_FN, KC_PLUS, KC_PIPE, MD_LINK, _______, \
-    XXXXXXX, OS_LALT, OS_LCTL, OS_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, GET_SET, XXXXXXX, \
+    KC_DOT , _______, KC_SCLN, _______, _______, MD_CODE, KC_EQL,  KC_COLN, ANGLEBR, _______, \
+    KC_COMM, OS_LALT, OS_LCTL, OS_LSFT, _______, KC_PIPE, KC_PLUS, KC_SLSH, MD_LINK, KC_MINS, \
+    XXXXXXX, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, RPR_SCL, GET_SET, XXXXXXX, \
                                _______, _______, OSR_SFT, _______
 
 // Nav layer: We Got Mods
 #define LAYER_NAV \
-    XXXXXXX, S_BACK,  OS_LGUI, S_FWD,   XXXXXXX, UND_RED, KC_HOME, KC_UP,   KC_END,  CLEAR,  \
-    OS_LGLC, OS_LALT, OS_LCTL, OS_LSFT, TS_LCTL, F5_TH,   KC_LEFT, KC_DOWN, KC_RGHT, ML_LGUI,  \
+    XXXXXXX, S_BACK,  OS_LGUI, S_FWD  , XXXXXXX, UND_RED, KC_HOME, KC_UP  , KC_END,  KC_BSPC,  \
+    OS_LGLC, OS_LALT, OS_LCTL, OS_LSFT, TS_LCTL, F5_TH  , KC_LEFT, KC_DOWN, KC_RGHT, ML_LGUI,  \
     XXXXXXX, OS_RALT, F12_TH,  KC_HYPR, XXXXXXX, XXXXXXX, ML_LSFT, ML_LCTL, ML_LALT, XXXXXXX,  \
                                _______, _______, _______, _______
 
@@ -87,30 +91,30 @@
 #define HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LCTL_T(k2),LSFT_T(k3)
 #define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),LALT_T(k2),k3
 
-// Macros to do the same but for mac
-#define MAC_URM_L(k1) LCTL_T(k1)
-#define MAC_URM_R(k1) RCTL_T(k1)
-#define MAC_HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LGUI_T(k2),LSFT_T(k3)
-#define MAC_HRM_R(k0, k1, k2, k3) RSFT_T(k0),RGUI_T(k1),LALT_T(k2),k3
-
 #define HRM(k) HR_MODTAP(k)
 #define HR_MODTAP( \
       l01, l02, l03, l04, l05,  r01, r02, r03, r04, r05, \
       l06, l07, l08, l09, l10,  r06, r07, r08, r09, r10, \
       l11, l12, l13, l14, l15,  r11, r12, r13, r14, r15, \
-                     l16, l17, r16, r17 \
+                     l16, l17,  r16, r17 \
 )\
       l01, l02, URM_L(l03),l04, l05,  r01, r02, URM_R(r03), r04, r05, \
       HRM_L(l06, l07, l08, l09),l10,  r06, HRM_R(r07, r08, r09, r10), \
       l11,       l12, l13, l14, l15,  r11,       r12, r13, r14,  r15, \
                            l16, l17,  r16, r17 
 
+// Macros to do the same but for mac
+#define MAC_URM_L(k1) LCTL_T(k1)
+#define MAC_URM_R(k1) RCTL_T(k1)
+#define MAC_HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LGUI_T(k2),LSFT_T(k3)
+#define MAC_HRM_R(k0, k1, k2, k3) RSFT_T(k0),RGUI_T(k1),LALT_T(k2),k3
+
 #define MAC_HRM(k) MAC_HR_MODTAP(k)
 #define MAC_HR_MODTAP( \
       l01, l02, l03, l04, l05,  r01, r02, r03, r04, r05, \
       l06, l07, l08, l09, l10,  r06, r07, r08, r09, r10, \
       l11, l12, l13, l14, l15,  r11, r12, r13, r14, r15, \
-                     l16, l17, r16, r17 \
+                     l16, l17,  r16, r17 \
 )\
       l01, l02, MAC_URM_L(l03),l04, l05,  r01, r02, MAC_URM_R(r03), r04, r05, \
       MAC_HRM_L(l06, l07, l08, l09),l10,  r06, MAC_HRM_R(r07, r08, r09, r10), \
