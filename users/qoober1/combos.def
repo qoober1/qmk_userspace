@@ -2,15 +2,15 @@
 
 /*---- TOP ROW HORIZONTAL----*/
 COMB(l_crx_up,          KC_ESC,     KC_W, KC_F)
-COMB(ent,               KC_ENT,     KC_R, KC_G)
+COMB(ent,               KC_ENT,     KC_E, KC_G)
 
 COMB(r_hrz_up_mid_ind,  KC_TAB,     KC_W, KC_E)
 
 /*---- HOME ROW HORIZONTAL----*/
-COMB(cut,               S_CUT,      KC_E, KC_G)
-COMB(copy,              S_COPY,     KC_S, KC_F)
-COMB(paste,             S_PASTE,    KC_D, KC_F)
-
+// COMB(cut,               S_CUT,      KC_E, KC_G)
+// COMB(copy,              S_COPY,     KC_S, KC_F)
+// COMB(paste,             S_PASTE,    KC_D, KC_F)
+ 
 /*---- BOTTOM ROW HORIZONTAL----*/
 COMB(l_hrz_dn_rng_mid,  KILLWRD,    KC_X, KC_C)
 COMB(l_hrz_dn_mid_ind,  KC_Z,       KC_C, KC_V)
@@ -43,7 +43,7 @@ COMB(r_vert_hm_rng,     KC_BSLS,    KC_L, KC_DOT)
 /*---- TOP-HOME ADJACENT DIAGONALS ----*/
 COMB(l_diag_up_pnk,     OS_LCTL,    KC_Q, KC_S)
 COMB(l_diag_up_mid,     KC_LBRC,    KC_E, KC_F)
-COMB(wheel_up,          KC_WH_U,    KC_E, KC_G)
+// COMB(wheel_up,          KC_WH_U,    KC_E, KC_G)
 
 COMB(page_up,           KC_PGUP,    KC_U, KC_H)
 COMB(r_diag_up_mid,     KC_RBRC,    KC_I, KC_J)

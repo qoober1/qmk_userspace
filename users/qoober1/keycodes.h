@@ -68,10 +68,11 @@ enum custom_keycodes {
 /* ---------- Aliases ---------- */
 
 // #define OSL_R       LT(_NAV, KC_R)
-#define LT_SPC      LT(_NAV, KC_SPC)
-#define LT_D        LT(_SYM, KC_D)
-#define LT_L        LT(_NUM, KC_L)
+// #define LT_D        LT(_SYM, KC_D)
+// #define LT_L        LT(_NUM, KC_L)
 // #define MAGIK       LT(_SYM, KC_0)
+
+#define LT_SPC      LT(_NAV, KC_SPC)
 
 // oneshot layers
 #define NUM_OSL     OSL(_NUM)

@@ -11,9 +11,9 @@
 
 // Legacy daily driver
 #define LAYER_APTv3 \
-    KC_F   , KC_M   , KC_N   , LT_D   , KC_Y   , KC_J   , LT_L   , KC_U   , KC_O   , KC_DOT , \
+    KC_F   , KC_M   , KC_N   , KC_D   , KC_Y   , KC_J   , KC_L   , KC_U   , KC_O   , KC_DOT , \
     KC_S   , KC_T   , KC_H   , KC_G   , KC_C   , KC_W   , KC_R   , KC_E   , KC_A   , KC_I   , \
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT, _______, \
                                THM_LH0, THM_LH1, THM_RH1, THM_RH0
 #define LAYER_ALPHA2 \
     _______, _______, KC_Q   , _______, _______, _______, _______, _______, _______, _______, \
@@ -85,11 +85,10 @@
 // LAYOUT wrappers for default 34-key layout mapping
 #define LAYOUT_wrapper(...) LAYOUT_split_34(__VA_ARGS__)
 
-// Macros to add inverted-T GACS mods
-#define URM_L(k1) LGUI_T(k1)
-#define URM_R(k1) RGUI_T(k1)
-#define HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LCTL_T(k2),LSFT_T(k3)
-#define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),LALT_T(k2),k3
+#define LTH_L(k0, k1, k2, k3) k0,LT(_SYM, (k1)),LT(_NAV, (k2)), LT(_NUM, (k3))
+#define LTH_R(k0, k1, k2, k3) LT(_NUM, (k0)),LT(_NAV, (k1)), LT(_SYM, (k2)),k3
+#define HRM_L(k0, k1, k2, k3) LGUI_T(k0),LALT_T(k1),LCTL_T(k2),LSFT_T(k3)
+#define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),LALT_T(k2),RGUI_T(k3)
 
 #define HRM(k) HR_MODTAP(k)
 #define HR_MODTAP( \
@@ -98,19 +97,37 @@
       l11, l12, l13, l14, l15,  r11, r12, r13, r14, r15, \
                      l16, l17,  r16, r17 \
 )\
-      l01, l02, URM_L(l03),l04, l05,  r01, r02, URM_R(r03), r04, r05, \
+      LTH_L(l01, l02, l03, l04),l05,  r01, LTH_R(r02, r03, r04, r05), \
       HRM_L(l06, l07, l08, l09),l10,  r06, HRM_R(r07, r08, r09, r10), \
       l11,       l12, l13, l14, l15,  r11,       r12, r13, r14,  r15, \
                            l16, l17,  r16, r17 
+                            
+// Macros to add inverted-T GACS mods
+// #define URM_L(k1) LGUI_T(k1)
+// #define URM_R(k1) RGUI_T(k1)
+// #define HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LCTL_T(k2),LSFT_T(k3)
+// #define HRM_R(k0, k1, k2, k3) RSFT_T(k0),RCTL_T(k1),LALT_T(k2),k3
+
+// #define HRM(k) HR_MODTAP(k)
+/* #define HR_MODTAP( \
+      l01, l02, l03, l04, l05,  r01, r02, r03, r04, r05, \
+      l06, l07, l08, l09, l10,  r06, r07, r08, r09, r10, \
+      l11, l12, l13, l14, l15,  r11, r12, r13, r14, r15, \
+                     l16, l17,  r16, r17 \
+)\
+      l01, l02, URM_L(l03),l04, l05,  r01, r02, URM_R(r03), r04, r05, \
+      HRM_L(l06, l07, l08, l09),l10,  r06, HRM_R(r07, r08, r09, r10), \
+      l11,       l12, l13, l14, l15,  r11,       r12, r13, r14,  r15, \
+                           l16, l17,  r16, r17 */
 
 // Macros to do the same but for mac
-#define MAC_URM_L(k1) LCTL_T(k1)
-#define MAC_URM_R(k1) RCTL_T(k1)
-#define MAC_HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LGUI_T(k2),LSFT_T(k3)
-#define MAC_HRM_R(k0, k1, k2, k3) RSFT_T(k0),RGUI_T(k1),LALT_T(k2),k3
+// #define MAC_URM_L(k1) LCTL_T(k1)
+// #define MAC_URM_R(k1) RCTL_T(k1)
+// #define MAC_HRM_L(k0, k1, k2, k3) k0,LALT_T(k1),LGUI_T(k2),LSFT_T(k3)
+// #define MAC_HRM_R(k0, k1, k2, k3) RSFT_T(k0),RGUI_T(k1),LALT_T(k2),k3
 
-#define MAC_HRM(k) MAC_HR_MODTAP(k)
-#define MAC_HR_MODTAP( \
+// #define MAC_HRM(k) MAC_HR_MODTAP(k)
+/* #define MAC_HR_MODTAP( \
       l01, l02, l03, l04, l05,  r01, r02, r03, r04, r05, \
       l06, l07, l08, l09, l10,  r06, r07, r08, r09, r10, \
       l11, l12, l13, l14, l15,  r11, r12, r13, r14, r15, \
@@ -119,4 +136,4 @@
       l01, l02, MAC_URM_L(l03),l04, l05,  r01, r02, MAC_URM_R(r03), r04, r05, \
       MAC_HRM_L(l06, l07, l08, l09),l10,  r06, MAC_HRM_R(r07, r08, r09, r10), \
       l11,       l12, l13, l14, l15,  r11,       r12, r13, r14,  r15, \
-                           l16, l17,  r16, r17 
+                           l16, l17,  r16, r17 */

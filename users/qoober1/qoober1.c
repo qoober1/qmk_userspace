@@ -1,4 +1,4 @@
-#include "possumvibes.h"
+#include "qoober1.h"
 #include <print.h>
 #include "keycodes.h"
 
@@ -144,37 +144,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // Example: Convert vowels to accented versions
                 switch (base_keycode) {                // Apply your dead key transformation here
                     case KC_S:
-                        tap_code(KC_V); // ó
+                        tap_code(KC_Z);
                         return false;
                     case KC_T:
-                        tap_code(KC_K); // í
+                        tap_code(KC_K);
                         return false;
                     case KC_H:
                         tap_code(KC_P);
-                        return false; // Prevent the original keycode from being processed
+                        return false;
                     case KC_N:
-                        tap_code(KC_B); // é
+                        tap_code(KC_B);
+                        return false;
+                    case KC_G:
+                        tap_code(KC_V);
+                        return false;
+                    case KC_D:
+                        tap_code(KC_Q);
                         return false;
                     case KC_C:
-                        tap_code(KC_Z); // ú
-                        return false;
-                    case KC_Y:
-                        tap_code(KC_Q); // ú
-                        return false;
-                    case KC_W:
-                        tap_code(KC_J); // ñ
+                        tap_code(KC_J);
                         return false;
                     case KC_R:
-                        tap_code(KC_X); // ñ
+                        tap_code(KC_X);
                         return false;
                     case KC_E:
-                        tap_code(KC_SCLN); // ñ
+                        tap_code(KC_SCLN);
                         return false;
                     case KC_A:
-                        tap_code(KC_QUOT); // ñ
+                        tap_code(KC_QUOT);
                         return false;
                     case KC_I:
-                        tap_code(KC_COMM); // ñ
+                        tap_code(KC_COMM);
                         return false;
                     case KC_U:
                         tap_code16(KC_COLN);

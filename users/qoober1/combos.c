@@ -1,4 +1,4 @@
-#include "possumvibes.h"
+#include "qoober1.h"
 
 #ifdef COMBO_TERM_PER_COMBO
 uint16_t get_combo_term(uint16_t index, combo_t *combo){
